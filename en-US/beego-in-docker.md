@@ -64,7 +64,7 @@ After the container running, you got the Golang environment:
 
 You should see something like below. It created a new container from the Golang image and ran command `/bin/bash` with options `-it` on that container which will give you a terminal to interactive with your container. Then I typed `go version` to check my Golang environment.
 
-![](images/docker.golang.png?raw=true)
+![](../images/docker.golang.png?raw=true)
 
 The first time when you run `docker run <image name>`, if docker can't find it on your local machine, it will automatically try to pull the Docker image from the Docker repository.
 
@@ -88,7 +88,7 @@ After the container running, you can build your Go code with the container's Go 
 
 Below is the result you should see:
 
-![](images/docker.golang.hello-world.png?raw=true)
+![](../images/docker.golang.hello-world.png?raw=true)
 
 Now you might get confused how had this been done, let me explain it detailly:
 
@@ -168,7 +168,7 @@ Then let's run our `beego-docker` project:
 
 The new option I am using here is `-p 80:8080` which will expose the port 8080 inside the Docker container to the host's 8081 port. And guess what, see it on live!! [http://book.beego.me:8081](http://book.beego.me:8081).
 
-![](images/docker.bee.run.png?raw=true)
+![](../images/docker.bee.run.png?raw=true)
 
 
 5. <a name="mysql-docker-image"></a>Get along with the [Mysql Docker image](https://registry.hub.docker.com/_/mysql).
@@ -186,7 +186,7 @@ To connect to this server from command line:
 
 This command will connect to the mysql server we ran before by using `--link db:mysql` which links by the container name `db`. And we can create our database here `create database beego;`
 
-![](images/docker.mysql.png?raw=true)
+![](../images/docker.mysql.png?raw=true)
 
 > You can check the [Docker document about links](http://docs.docker.com/userguide/dockerlinks/) for more information. 
 
@@ -225,7 +225,7 @@ We can start our nginx by:
 
 You might be wondering why it's `proxy_pass http://beego:8080;` here. It happens magically by using `--link beego:beego`, Docker will set a host which pointing container beego's ip to the container's name, in the nginx's `/etc/hosts` file,
 
-![](images/docker.link.hosts.png?raw=true)
+![](../images/docker.link.hosts.png?raw=true)
 
 7. <a name="wire-up"></a>Wire dockers up togeter
 -----------------
@@ -264,7 +264,7 @@ The API: [http://book.beego.me/v1/posts](http://book.beego.me/v1/posts)
 
 And the docuemnt: [http://book.beego.me/swagger/swagger-1/](http://book.beego.me/swagger/swagger-1/)
 
-![](images/docker.swagger.png?raw=true)
+![](../images/docker.swagger.png?raw=true)
 
 8. [Conclusion](#conclusion)
 -----------
@@ -272,6 +272,8 @@ And the docuemnt: [http://book.beego.me/swagger/swagger-1/](http://book.beego.me
 This section gives you a basic version of Docker, Docker images, Docker containers and how to work with them. We don't need to spend so much time to set up the development environment and suffer the dependency hell anymore. At the beginning you might be afraid of all those long docker commands you need to type, jsut go check the Docker document and you will get familiar with them soon. 
 
 Also there are some convenient tools to help you out from these commands. [Fig](http://www.fig.sh) is one of them, it gives you fast and isolated development environments using Docker. I will talk about Fig in the future.
+
+
 
 
 
