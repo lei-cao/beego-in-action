@@ -1,6 +1,8 @@
 装在 Docker 里面的 Beego
 ================
 
+[**English Version**](../en-US/beego-in-docker.md)
+
 [Docker](http://docker.io) 是一个快速创建一致的开发和部署环境的工具. 每一个程序员已经习惯了去一遍又一遍的安装和配置开发环境. 我们已经习惯了各种各样的系统库不兼容的 bug. 每次升级系统, 我们的开发环境都可能轻易的崩溃. 我们还经常遇到开发环境和生产环境不一致导致的奇怪的 bug. 幸运的是我们现在有了 Docker. 小伙伴们要是想愉快的开发, Docker 是你必须要尝试的工具.
 
 Docker 最近很火, 已经有很多文章介绍 Docker, 小伙伴们可以自己去看.  这里我会介绍如何结合 Docker 来进行 [Beego](http://beego.me) 的开发.

@@ -1,6 +1,8 @@
 Dockerized Beego
 ================
 
+[**简体中文版**](../zh-CN/beego-in-docker.md)
+
 [Docker](http://docker.io) is a amazing tool to create the consistent environment for development and deployment. We developers have already gotten used to spend hours to set up the development evnironment to just start writing code. We've spent so many times in the dependency hell. Our development easily get crashed while we upgrade our system. We encounter wired bugs because the development environment is different from the production server environment. Thankfully we have Docker now. It's the must-try tool to make your development easier and happier.
 
 There are already many articles introduce you what is Docker, how to install Docker and get started with it. I will directly talk about how to set up the development environment for developing [beego](http://beego.me) applications. If you are new to Docker, it's better to check out the links below first.
