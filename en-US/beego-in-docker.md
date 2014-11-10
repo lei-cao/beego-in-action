@@ -14,15 +14,15 @@ There are already many articles introduce you what is Docker, how to install Doc
 After you getting the basic concept of Docker, let's start to dockerize our production ready Beego application. Here is our [final application](http://book.beego.me/), nothing mouch, just the beego application default page with reading the data from the mysql database dynamically. Here is our outlines:
 
 1. [Set up the server](#setup)
-+ [Install the Docker on the server.](#install)
-+ [Get along with the Golong Docker image](#golang-docker-image) 
+2. [Install the Docker on the server.](#install)
+3. [Get along with the Golong Docker image](#golang-docker-image) 
  * [The ready-to-use Golang env](#golang-env)
  * [The hello world](#hello-world)
-+ [Build the beego Docker image](#beego-docker-image)
-+ [Get along with the Mysql Docker image](#mysql-docker-image)
-+ [Get along with the Nginx Docker image](#nginx-docker-image)
-+ [Wire dockers up together](#wire-up)
-+ [Conclusion](#conclusion)  
+4. [Build the beego Docker image](#beego-docker-image)
+5. [Get along with the Mysql Docker image](#mysql-docker-image)
+6. [Get along with the Nginx Docker image](#nginx-docker-image)
+7. [Wire dockers up together](#wire-up)
+8. [Conclusion](#conclusion)  
 
 
 
