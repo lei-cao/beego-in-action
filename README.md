@@ -16,7 +16,7 @@ This is a book all about Go web development
 
 3. The backend
 
-  3.1 [Dockerized Beego: Beego in Docker](beego-in-docker.md)
+  3.1 [Dockerized Beego: Beego in Docker](en-US/beego-in-docker.md)
 
   3.2 Go-dep, gocover, swagger, cache, Emails, HaProxy, elasticsearch, logstash, Mysql master, slavers, CDN, Nginx, newrelic, Salt
 
