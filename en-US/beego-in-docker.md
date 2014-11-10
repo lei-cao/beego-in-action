@@ -52,7 +52,7 @@ $ source /etc/bash_completion.d/docker.io
 
 Docker has made a [Golang offical repo](https://registry.hub.docker.com/_/golang/), you can start using it as your base Go environment. Let's create a hello world web application with our Golang Docker image.
 
- * ### <a name="golang-env"></a>The ready-to-use Golang env
+### <a name="golang-env"></a>The ready-to-use Golang env
 
 Just run this command to start a new Docker Container from the [Golang offical repo](https://registry.hub.docker.com/_/golang/)
 
@@ -77,7 +77,7 @@ You can check the containers you created from the images by command:
 `docker ps -a`
 
 
- * ### <a name="hello-world"></a>The hello world
+### <a name="hello-world"></a>The hello world
 
 `docker run -it -v /home/leicao/programming/go/hello-world/:/go/src/hello-world golang /bin/bash`
 
