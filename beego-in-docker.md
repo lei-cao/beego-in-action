@@ -234,7 +234,7 @@ We are having Golang, Beego/Bee, Mysql, Nginx now. Let's start a new api project
 
 We will create a beeblog api and [Here is our database schema](medias/beeblog.sql)
 
-* Start a Mysql server with db name beeblog:
+- Start a Mysql server with db name beeblog:
 
  `docker run --name db -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=beeblog -d mysql` 
  
@@ -264,8 +264,13 @@ The API: [http://book.beego.me/v1/posts](http://book.beego.me/v1/posts)
 
 And the docuemnt: [http://book.beego.me/swagger/swagger-1/](http://book.beego.me/swagger/swagger-1/)
 
-8. [Conclusion](#conclusion)
+![](images/docker.swagger.png?raw=true)
 
-This section gives you a basic version of Docker, Docker images, Docker containers and how to work with them. We don't need to spend so much time to set up the development environment and suffer the dependency hell anymore. At the beginning you might be afraid of all those long docker commands we need to type but you will get familar with them soon. Also there are some convenient tool to help you out of these commands. [Fig](http://www.fig.sh) is one of them, it gives you fast and isolated development environments using Docker. I will talk about Fig in the future.
+8. [Conclusion](#conclusion)
+-----------
+
+This section gives you a basic version of Docker, Docker images, Docker containers and how to work with them. We don't need to spend so much time to set up the development environment and suffer the dependency hell anymore. At the beginning you might be afraid of all those long docker commands you need to type, jsut go check the Docker document and you will get familiar with them soon. 
+
+Also there are some convenient tools to help you out from these commands. [Fig](http://www.fig.sh) is one of them, it gives you fast and isolated development environments using Docker. I will talk about Fig in the future.
 
 
