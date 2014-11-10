@@ -6,7 +6,7 @@ This is a book all about Go web development
 ## Outline
 
 1. Introduction 
-    I will talk about all the best practice of the web development in the real projects. It will include all the techonologies people are using to develop the robost, stable, fast web applications.  
+    I will talk about all the best practice of the web development in the real projects. It will include all the technologies people are using to develop the robust, stable, fast web applications.
 
 2. The frontend
 
@@ -57,7 +57,7 @@ This is a book all about Go web development
 
 4. SEO
 
-5. Google analitics, webmaster tools, Google tag manager, doubleclick, google AD words
+5. Google analytics, webmaster tools, Google tag manager, DoubleClick, google AD words
 
 5. Mobile ready
 

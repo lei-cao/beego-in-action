@@ -3,23 +3,23 @@ Dockerized Beego
 
 [**简体中文版**](../zh-CN/beego-in-docker.md)
 
-[Docker](http://docker.io) is a amazing tool to create the consistent environment for development and deployment. We developers have already gotten used to spend hours to set up the development evnironment to just start writing code. We've spent so many times in the dependency hell. Our development easily get crashed while we upgrade our system. We encounter wired bugs because the development environment is different from the production server environment. Thankfully we have Docker now. It's the must-try tool to make your development easier and happier.
+[Docker](http://docker.io) is a amazing tool to create the consistent environment for development and deployment. We developers have already gotten used to spend hours to set up the development environment to just start writing code. We've spent so many times in the dependency hell. Our development easily get crashed while we upgrade our system. We encounter wired bugs because the development environment is different from the production server environment. Thankfully we have Docker now. It's the must-try tool to make your development easier and happier.
 
 There are already many articles introduce you what is Docker, how to install Docker and get started with it. I will directly talk about how to set up the development environment for developing [beego](http://beego.me) applications. If you are new to Docker, it's better to check out the links below first.
 
 
-- [Docke homepage](https://www.docker.com/)
+- [Docker homepage](https://www.docker.com/)
 - [Docker: Lightweight Linux Containers for Consistent Development and Deployment](http://www.linuxjournal.com/content/docker-lightweight-linux-containers-consistent-development-and-deployment)
 - [Docker: Using Linux Containers to Support Portable Application Deployment](http://www.infoq.com/articles/docker-containers)
 - [Deploying Go servers with Docker](https://blog.golang.org/docker)
 
-After you getting the basic concept of Docker, let's start to dockerize our production ready Beego application. Here is our [final application](http://book.beego.me/), nothing mouch, just the beego application default page with reading the data from the mysql database dynamically. Here is our outlines:
+After you getting the basic concept of Docker, let's start to dockerize our production ready Beego application. Here is our [final application](http://book.beego.me/), nothing much, just the beego application default page with reading the data from the mysql database dynamically. Here is our outlines:
 
 1. [Set up the server](#setup)
 
 2. [Install the Docker on the server.](#install)
 
-3. [Get along with the Golong Docker image](#golang-docker-image) 
+3. [Get along with the Golang Docker image](#golang-docker-image)
 
  * [The ready-to-use Golang env](#golang-env)
 
@@ -40,9 +40,9 @@ After you getting the basic concept of Docker, let's start to dockerize our prod
 1. <a name="setup"></a>Set up the server
 -------------
 
-I made this demo on the live server. If you guys wan't to play on your local machine, you can skip this section. It's pefectly ok, no much difference. 
+I made this demo on the live server. If you guys want to play on your local machine, you can skip this section. It's perfectly ok, no much difference.
 
-I bought the virtual host from [Linode](https://www.linode.com/) and install the Ubuntu 14.10. I pointed the subdomain `book.beego.me` to this ubuntu server. This step is very flexible, Nothing much.
+I bought the virtual host from [Linode](https://www.linode.com/) and install the Ubuntu 14.10. I pointed the subdomain `book.beego.me` to this Ubuntu server. This step is very flexible, Nothing much.
 
 
 2. <a name="install"></a>Install the Docker on the server.
@@ -58,14 +58,14 @@ $ sudo apt-get install docker.io
 $ source /etc/bash_completion.d/docker.io
 ```
 
-3. <a name="golang-docker-image"></a>Get along with the [Golong Docker image](https://registry.hub.docker.com/_/golang/).
+3. <a name="golang-docker-image"></a>Get along with the [Golang Docker image](https://registry.hub.docker.com/_/golang/).
 -------------
 
-Docker has made a [Golang offical repo](https://registry.hub.docker.com/_/golang/), you can start using it as your base Go environment. Let's create a hello world web application with our Golang Docker image.
+Docker has made a [Golang official repo](https://registry.hub.docker.com/_/golang/), you can start using it as your base Go environment. Let's create a hello world web application with our Golang Docker image.
 
  * ### <a name="golang-env"></a>The ready-to-use Golang env
 
-Just run this command to start a new Docker Container from the [Golang offical repo](https://registry.hub.docker.com/_/golang/)
+Just run this command to start a new Docker Container from the [Golang official repo](https://registry.hub.docker.com/_/golang/)
 
 `docker run -it golang /bin/bash`
 
@@ -101,7 +101,7 @@ Below is the result you should see:
 
 ![](../images/docker.golang.hello-world.png?raw=true)
 
-Now you might get confused how had this been done, let me explain it detailly:
+Now you might get confused how had this been done, let me explain it detailed:
 
 In the picture above:
 
@@ -156,12 +156,12 @@ How to use this Dockerfile?
 
   `docker build -t leicao/beego .`
 
- It's simple, right? If it's sucessfully built, you can see it by `docker images`  
+ It's simple, right? If it's successfully built, you can see it by `docker images`
  
 
 - The second option is even better which is the Docker's [automated builds](https://docs.docker.com/docker-hub/builds/#the-dockerfile-and-automated-builds)
 
- It's also very simple, just following the guide, creating your git repo with the Dockfile, in my case it's [github.com/lei-cao/dockers](https://github.com/lei-cao/dockers). And then I got this [build](https://registry.hub.docker.com/u/leicao/beego/) built by Docker automated builds.
+ It's also very simple, just following the guide, creating your git repo with the Dockerfile, in my case it's [github.com/lei-cao/dockers](https://github.com/lei-cao/dockers). And then I got this [build](https://registry.hub.docker.com/u/leicao/beego/) built by Docker automated builds.
 
 Now we have the Beego Docker image, let's play with it.
 
@@ -185,7 +185,7 @@ The new option I am using here is `-p 8081:8080` which will expose the port 8080
 5. <a name="mysql-docker-image"></a>Get along with the [Mysql Docker image](https://registry.hub.docker.com/_/mysql).
 ------------------
 
-Similar as the Golong Docker image we play with, we can get the Mysql running in a single command:
+Similar as the Golang Docker image we play with, we can get the Mysql running in a single command:
 
 `docker run --name db -e MYSQL_ROOT_PASSWORD=root -d mysql`
 
@@ -238,10 +238,10 @@ You might be wondering why it's `proxy_pass http://beego:8080;` here. It happens
 
 ![](../images/docker.link.hosts.png?raw=true)
 
-7. <a name="wire-up"></a>Wire dockers up togeter
+7. <a name="wire-up"></a>Wire dockers up together
 -----------------
 
-We are having Golang, Beego/Bee, Mysql, Nginx now. Let's start a new api project similar as the tutorial here [bee api applicatioin](http://beego.me/blog/beego_api) Video: [Youtube](http://youtu.be/w7RziV_Sn-g).
+We are having Golang, Beego/Bee, Mysql, Nginx now. Let's start a new api project similar as the tutorial here [bee api application](http://beego.me/blog/beego_api) Video: [Youtube](http://youtu.be/w7RziV_Sn-g).
 
 We will create a beeblog api and [Here is our database schema](medias/beeblog.sql)
 
@@ -275,14 +275,14 @@ Now you can see our beeblog api on live:
 
 The API: [http://book.beego.me/v1/posts](http://book.beego.me/v1/posts)
 
-And the docuemnt: [http://book.beego.me/swagger/swagger-1/](http://book.beego.me/swagger/swagger-1/)
+And the document: [http://book.beego.me/swagger/swagger-1/](http://book.beego.me/swagger/swagger-1/)
 
 ![](../images/docker.swagger.png?raw=true)
 
 8. [Conclusion](#conclusion)
 -----------
 
-This section gives you a basic version of Docker, Docker images, Docker containers and how to work with them. We don't need to spend so much time to set up the development environment and suffer the dependency hell anymore. At the beginning you might be afraid of all those long docker commands you need to type, jsut go check the Docker document and you will get familiar with them soon. 
+This section gives you a basic version of Docker, Docker images, Docker containers and how to work with them. We don't need to spend so much time to set up the development environment and suffer the dependency hell anymore. At the beginning you might be afraid of all those long docker commands you need to type, just go check the Docker document and you will get familiar with them soon.
 
 Also there are some convenient tools to help you out from these commands. [Fig](http://www.fig.sh) is one of them, it gives you fast and isolated development environments using Docker. I will talk about Fig in the future.
 

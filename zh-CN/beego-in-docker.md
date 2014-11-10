@@ -7,12 +7,14 @@
 
 Docker 最近很火, 已经有很多文章介绍 Docker, 小伙伴们可以自己去看.  这里我会介绍如何结合 Docker 来进行 [Beego](http://beego.me) 的开发.
 
-- [Docke homepage](https://www.docker.com/)
+- [Docker homepage](https://www.docker.com/)
 - [Docker: Lightweight Linux Containers for Consistent Development and Deployment](http://www.linuxjournal.com/content/docker-lightweight-linux-containers-consistent-development-and-deployment)
 - [Docker: Using Linux Containers to Support Portable Application Deployment](http://www.infoq.com/articles/docker-containers)
 - [Deploying Go servers with Docker](https://blog.golang.org/docker)
+- [利用Docker构建开发环境](http://tech.uc.cn/?p=2726)
+- [深入浅出Docker](http://www.infoq.com/cn/dockers)
 
- 在对 Docker 有了基本的了解之后,  让我们开始用 Docker 进行 Beego 开发吧.  我们[最后的程序](http://book.beego.me/)可以在这里看到. 下面是这个部分的目录:
+在对 Docker 有了基本的了解之后,  让我们开始用 Docker 进行 Beego 开发吧.  我们[最后的程序](http://book.beego.me/)可以在这里看到. 下面是这个部分的目录:
 
 1. [创建服务器](#setup)
 
@@ -56,14 +58,14 @@ $ sudo apt-get install docker.io
 $ source /etc/bash_completion.d/docker.io
 ```
 
-3. <a name="golang-docker-image"></a>使用 Golang 的 Docker Image[Golong Docker image](https://registry.hub.docker.com/_/golang/).
+3. <a name="golang-docker-image"></a>使用 Golang 的 Docker Image[Golang Docker image](https://registry.hub.docker.com/_/golang/).
 -------------
 
 Docker 有一个 [Golang 官方库](https://registry.hub.docker.com/_/golang/). 你可以直接用它最为你的 Go 开发环境. 然后我们会从 Hello World 开始.
 
  * ### <a name="golang-env"></a>不用安装的 Golang env
 
- 你只要运行下面的命令就可以从 [Golang  官方库](https://registry.hub.docker.com/_/golang/) 创建一个包括 Golang 开发环境的 Docker Container.
+你只要运行下面的命令就可以从 [Golang  官方库](https://registry.hub.docker.com/_/golang/) 创建一个包括 Golang 开发环境的 Docker Container.
 
 `docker run -it golang /bin/bash`
 
@@ -71,11 +73,11 @@ Docker 有一个 [Golang 官方库](https://registry.hub.docker.com/_/golang/). 
 
 `go version`
 
- 你会看到如下图的结果. 我通过在 Golang Image 上运行 `/bin/bash` 来创建了一个 Container. `-it` 选项会让 Docker 创建一个可交互的命令行界面. 之后在这个新建的 Container 内, 我输入 `go version` 来测试我的 Golang 环境.
+你会看到如下图的结果. 我通过在 Golang Image 上运行 `/bin/bash` 来创建了一个 Container. `-it` 选项会让 Docker 创建一个可交互的命令行界面. 之后在这个新建的 Container 内, 我输入 `go version` 来测试我的 Golang 环境.
 
 ![](../images/docker.golang.png?raw=true)
 
- 在你第一次运行 `docker run <image name>` 的时候, 如果 Docker 没有在本机找到对应的 Image, 则会自动到 Docker 库中寻找.
+在你第一次运行 `docker run <image name>` 的时候, 如果 Docker 没有在本机找到对应的 Image, 则会自动到 Docker 库中寻找.
 
 通过下面的命令, 你可以查看本地存在的 Docker Image.
 
@@ -151,13 +153,13 @@ RUN go get github.com/beego/bee
 
 那么我们怎么使用这个 Dockerfile 呢?
 
--  第一种方式是你自己 build, 在这个 Dockerfile 所在目录下运行下面的命令 
+- 第一种方式是你自己 build, 在这个 Dockerfile 所在目录下运行下面的命令 
 
   `docker build -t leicao/beego .`
 
 非常的简单, 接着你就可以在 `docker images` 里面看到它了
 
--  第二种方式更好更方便, 那便是使用 Docker 官方的 [自动化 build](https://docs.docker.com/docker-hub/builds/#the-dockerfile-and-automated-builds)
+- 第二种方式更好更方便, 那便是使用 Docker 官方的 [自动化 build](https://docs.docker.com/docker-hub/builds/#the-dockerfile-and-automated-builds)
 
 根据这个教程, 为你的 Dockerfile 创建 git repo, 我的是 [github.com/lei-cao/dockers](https://github.com/lei-cao/dockers).  之后我就得到了自动 build 的 [beego image](https://registry.hub.docker.com/u/leicao/beego/).
 
@@ -194,7 +196,7 @@ RUN go get github.com/beego/bee
 
 `docker run -it --link db:mysql mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p'`
 
- 这里又用到了一个新的选项, `--link db:mysql`, 它通过 container 的 name `db` 在两个 container 直接创建了连接, 从而可以使用另外一个 container 的资源. 我们可以在 Mysql 命令行创建我们的数据库 `create database beego;`
+这里又用到了一个新的选项, `--link db:mysql`, 它通过 container 的 name `db` 在两个 container 直接创建了连接, 从而可以使用另外一个 container 的资源. 我们可以在 Mysql 命令行创建我们的数据库 `create database beego;`
 
 ![](../images/docker.mysql.png?raw=true)
 
@@ -233,14 +235,14 @@ server {
 
 `docker run --name nginx --link beego:beego -v "$(pwd)"/nginx:/etc/nginx/conf.d/ -p 80:80 -d nginx`
 
- 你可能会疑惑为什么用 `proxy_pass http://beego:8080;`. 事实上当我们使用 `--link beego:beego` 的时候, Docker 会在 Nginx 的 container 里面的 `/etc/hosts` 文件中设置一个 host, 将 Beego container 的 ip 指向 它的名字 `beego`.
+你可能会疑惑为什么用 `proxy_pass http://beego:8080;`. 事实上当我们使用 `--link beego:beego` 的时候, Docker 会在 Nginx 的 container 里面的 `/etc/hosts` 文件中设置一个 host, 将 Beego container 的 ip 指向 它的名字 `beego`.
 
 ![](../images/docker.link.hosts.png?raw=true)
 
 7. <a name="wire-up"></a>联合使用这些 Docker
 -----------------
 
-我们现在有了 Golang, Beego/Bee, Mysql, Nginx. 接下来让我们 参照这个例子 [bee api applicatioin](http://beego.me/blog/beego_api) [Youtube](http://youtu.be/w7RziV_Sn-g), 创建一个 Beego Api 应用
+我们现在有了 Golang, Beego/Bee, Mysql, Nginx. 接下来让我们 参照这个例子 [bee api application](http://beego.me/blog/beego_api) [Youtube](http://youtu.be/w7RziV_Sn-g), 创建一个 Beego Api 应用
 
 我们来创建一个 beeblog api 应用. [这里是数据库的结构](medias/beeblog.sql)
 
