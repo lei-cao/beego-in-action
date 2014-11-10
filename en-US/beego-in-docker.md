@@ -175,7 +175,7 @@ Then let's run our `beego-docker` project:
 
 `docker run --rm -v "$(pwd)"/beego-docker:/go/src/beego-docker -w /go/src/beego-docker -p 8081:8080 leicao/beego bee run`
 
-The new option I am using here is `-p 80:8080` which will expose the port 8080 inside the Docker container to the host's 8081 port. And guess what, see it on live!! [http://book.beego.me:8081](http://book.beego.me:8081).
+The new option I am using here is `-p 8081:8080` which will expose the port 8080 inside the Docker container to the host's 8081 port. And guess what, see it on live!! [http://book.beego.me:8081](http://book.beego.me:8081).
 
 ![](../images/docker.bee.run.png?raw=true)
 
@@ -262,6 +262,8 @@ We will create a beeblog api and [Here is our database schema](medias/beeblog.sq
 
  `docker run --rm --link db:mysql -v "$(pwd)/beeblog":/go/src/beeblog -w /go/src/beeblog -p 8080:8080 --name beego leicao/beego bee run -downdoc=true -gendoc=true`
 
+  Or run it directly
+ `sudo docker run  --link db:mysql -v "$(pwd)/beeblog":/go/src/beeblog -w /go/src/beeblog -p 8080:8080 --name beego -d leicao/beego ./beeblog`
 
 - Start the Nginx:
 
