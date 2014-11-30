@@ -1,4 +1,4 @@
-Dockerized Beego
+Beego in Docker
 ================
 
 [**简体中文版**](../zh-CN/beego-in-docker.md)

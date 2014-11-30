@@ -10,7 +10,7 @@ This is a book all about Go web development
 
 2. The frontend
 
-  2.1. CSS tool chain, mobile ready
+  2.1. CSS tool chain, mobile ready, Broccoli.js
 
   2.2. JS tool chain
 
@@ -18,17 +18,17 @@ This is a book all about Go web development
 
   3.1 [Dockerized Beego: Beego in Docker](en-US/beego-in-docker.md)
 
-  3.2 Go-dep, GoCover, Swagger, cache, Emails, HaProxy, elasticsearch, logstash, Mysql master, slavers, CDN, Nginx, newrelic, Salt
+  3.2 Go-dep, GoCover, Swagger, cache, Emails, HaProxy, elasticsearch, logstash, Mysql master, slavers, CDN, Nginx, newrelic, Salt, SSL/HTTPS
 
   3.3 Large application structure.
 
 3. The RESTful API
 
-  3.1 The authentication of the API
+  3.1 [The API Authentication](en-US/api-authentication.md)
 
-     3.1.1 JWT
+  3.2 JWT in Beego
 
-     3.1.2 oauth2
+  3.3 oauth2
 
   Interface design
 
