@@ -3,6 +3,8 @@ Beego in Action
 
 This is a book all about Go web development
 
+[中文版](README_zh-CN.md)
+
 ## Outline
 
 1. Introduction 
