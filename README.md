@@ -12,9 +12,12 @@ This is a book all about Go web development
 
 2. The frontend
 
+
   2.1. CSS tool chain, mobile ready, Broccoli.js
 
-  2.2. JS tool chain
+  2.2. JS tool chain, browserify
+
+  2.4 [Build Process - Using Gulp](en-US/using-gulp.md)
 
 3. The backend
 
@@ -28,7 +31,7 @@ This is a book all about Go web development
 
   3.1 [The API Authentication](en-US/api-authentication.md)
 
-  3.2 JWT in Beego
+  3.2 [JWT with Beego](en-US/jwt-with-beego.md)
 
   3.3 oauth2
 
@@ -37,6 +40,10 @@ This is a book all about Go web development
 4. The documents
 
 5. Testing
+
+  5.1 CI travis-ci
+
+6. Deploying
 
 #II Example
 

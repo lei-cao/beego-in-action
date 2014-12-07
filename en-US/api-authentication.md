@@ -13,9 +13,9 @@ The traditional way is using **Cookie-Based Authentication**. The server creates
 
 Because this approach is relied on the automatically sent cookie by web browser, there are some problems:
 
-- **stateless and Server side scalability**
+- **Stateless and Server side scalability**
 
-    The [RESTful API should be stateless](http://en.wikipedia.org/wiki/Representational_state_transfer#Stateless). There is no login or logout need to keep a session store on the API server to store the client state. The RESTful API server can scale easily.
+    The [RESTful API should be stateless](http://en.wikipedia.org/wiki/Representational_state_transfer#Stateless). There is no login or logout and no need to keep a session store on the API server to store the client state. The RESTful API server can scale easily.
 
     [See more here](http://stackoverflow.com/questions/3105296/if-rest-applications-are-supposed-to-be-stateless-how-do-you-manage-sessions)
 
@@ -50,7 +50,7 @@ Here are some great articles about Token-Based Authentication, you definitely sh
 
 ## JSON Web Token
 
->> JSON Web Token (JWT) is a compact URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is digitally signed using JSON Web Signature (JWS). IETF
+> JSON Web Token (JWT) is a compact URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is digitally signed using JSON Web Signature (JWS). IETF
 
 
 The JWT token contains all the information for keeping the session between the client and server, such as user id. There is no session data stored on the server so it's stateless.
@@ -107,3 +107,4 @@ You can store any information you want for keeping the session between the clien
 The signature `eoaDVGTClRdfxUZXiPs3f8FmJDkDE_VCQFXqKxpLsts` is signed based on the Payload, the Header, the secret key, and the `alg` in header.
 
 >You can read more about the Json Web Token [specification](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html).
+
