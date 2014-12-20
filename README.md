@@ -1,23 +1,11 @@
-Beego 实战
+Beego In Action
 ==================
 
-# 目录
+[Beego](http://beego.me) is a framework in Golang, there are many companies are using Beego in their live productions. It's a good choice to develop a web application in Beego.
 
-1. [前言](zh-CN/1.前言.md)
-2. [Hello Beego!](zh-CN/2.hello-beego.md)
-3. [模板](zh-CN/3.模板.md)
-4. [样式](zh-CN/4.样式.md)
-5. [表单](zh-CN/5.表单.md)
-6. [Ajax 单页应用](zh-CN/6.ajax-单页应用.md)
-7. [国际化与本地化](zh-CN/7.国际化与本地化.md)
-8. [数据库](zh-CN/8.数据库.md)
-9. [用户注册登陆](zh-CN/9.用户注册登陆.md)
-10. [用户管理](zh-CN/10.用户管理.md)
-11. [单元测试](zh-CN/11.单元测试.md)
-12. [粉丝, 联系人, 好友](zh-CN/12.粉丝-联系人-好友.md)
-13. [分页](zh-CN/13.分页.md)
-14. [全文搜索](zh-CN/14.全文搜索.md)
-15. [邮件支持](zh-CN/15.邮件支持.md)
-16. [日期和时间](zh-CN/16.日期和时间.md)
-17. [调试, 测试, 和性能分析](zh-CN/17.调试-测试-性能分析.md)
-18. [部署](zh-CN/18.部署.md)
+This book will teach you how to use Beego to develop a micro blog system, Beefer. You will learn many things about Beego in this book.
+This book is not only about Beego, but also how to develop a real-world web application in the full-stack view.
+而是讲以一个全栈开发的视角来介绍如何开发我们的 Beefer 应用.
+
+* [English](en-US/)
+* [简体中文](zh-CN/)
