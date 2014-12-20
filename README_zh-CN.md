@@ -1,66 +1,23 @@
-Beego in Action
+Beego 实战
 ==================
 
-This is a book all about Go web development
+# 目录
 
-## Outline
-
-1. Introduction 
-    I will talk about all the best practice of the web development in the real projects. It will include all the technologies people are using to develop the robust, stable, fast web applications.
-
-2. The frontend
-
-  2.1. CSS tool chain, mobile ready
-
-  2.2. JS tool chain
-
-3. The backend
-
-  3.1 [装在 Docker 里面的 Beego](zh-CN/beego-in-docker.md)
-
-  3.2 Go-dep, gocover, swagger, cache, Emails, HaProxy, elasticsearch, logstash, Mysql master, slavers, CDN, Nginx, newrelic, Salt
-
-  3.3 Large application structure.
-
-3. The RESTful API
-
-  3.1 The authentication of the API
-
-     3.1.1 JWT
-
-     3.1.2 oauth2
-
-  Interface design
-
-4. The documents
-
-5. Testing
-
-#II Example
-
-
-1. The database schema
-
-2. Permissions, Roles and Groups
-
-  2.1 The API side
-
-  2.2 The JS side
-
-3. Admin System
-
-4. The templates system
-
-5. The plugins system
-
-6. The widgets system
-
-4. SEO
-
-5. Google analytics, webmaster tools, Google tag manager, DoubleClick, google AD words
-
-5. Mobile ready
-
-6. Function design
-
-
+[1. 前言](zh-CN/1.前言.md)
+[2. Hello Beego!](zh-CN/2.hello-beego.md)
+[3. 模板](zh-CN/3.模板.md)
+[4. 样式](zh-CN/4.样式.md)
+[5. 表单](zh-CN/5.表单.md)
+[6. Ajax 单页应用](zh-CN/6.ajax-单页应用.md)
+[7. 国际化与本地化](zh-CN/7.国际化与本地化.md)
+[8. 数据库](zh-CN/8.数据库.md)
+[9. 用户注册登陆](zh-CN/9.用户注册登陆.md)
+[10. 用户管理](zh-CN/10.用户管理.md)
+[11. 单元测试](zh-CN/11.单元测试.md)
+[12. 粉丝, 联系人, 好友](zh-CN/12.粉丝-联系人-好友.md)
+[13. 分页](zh-CN/13.分页.md)
+[14. 全文搜索](zh-CN/14.全文搜索.md)
+[15. 邮件支持](zh-CN/15.邮件支持.md)
+[16. 日期和时间](zh-CN/16.日期和时间.md)
+[17. 调试, 测试, 和性能分析](zh-CN/17.调试-测试-性能分析.md)
+[18. 部署](zh-CN/18.部署.md)
