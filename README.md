@@ -1,5 +1,4 @@
 Beego In Action
-==================
 
 [Beego](http://beego.me) is a framework in Golang, many companies are using Beego in their live products. If you are developing a
  web application, Golang and Beego are good choices.
@@ -9,3 +8,4 @@ This book is not only about Beego, but also about how to develop a real-world we
 
 * [English](en-US/)
 * [简体中文](zh-CN/)
+
