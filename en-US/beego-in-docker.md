@@ -33,7 +33,9 @@ After you getting the basic concept of Docker, let's start to dockerize our prod
 
 7. [Wire dockers up together](#wire-up)
 
-8. [Conclusion](#conclusion)  
+8. [Known Issues](#known-issues)
+
+9. [Conclusion](#conclusion)
 
 
 
@@ -279,7 +281,31 @@ And the document: [http://book.beego.me/swagger/swagger-1/](http://book.beego.me
 
 ![](../images/docker.swagger.png?raw=true)
 
-8. [Conclusion](#conclusion)
+8. [Known Issues](#known-issues)
+
+If you are using Docker on Mac, you need to use the helper application called [Boot2Docker]() by following the [installing guide for Mac OS X](https://docs.docker.com/installation/mac/).
+
+However when you use `docker run -it -v $(pwd):/go/src -w /go/src/beeblog golang bee run` to develop your beego application, the `bee run` won't rebuild and reload the application after your code changes.
+
+There is a quick solution for this by using [`fswatch`](https://github.com/emcrisostomo/fswatch).
+
+You can install `fswatch` by `brew install fswatch` and here is the command:
+
+`fswatch -o ./src/beeblog | xargs -n1 ./reload.sh a8383e546ae4`
+
+This command just watch your application folder `./src/beeblog` and run `reload.sh` when there is a change in the folder.
+`a8383e546ae4` is your docker container id of the `bee run` command.
+
+And here is the `reload.sh` to reload your code.
+```bash
+#!/bin/bash
+docker stop $1
+docker start $1
+docker attach $1
+```
+
+
+9. [Conclusion](#conclusion)
 -----------
 
 This section gives you a basic version of Docker, Docker images, Docker containers and how to work with them. We don't need to spend so much time to set up the development environment and suffer the dependency hell anymore. At the beginning you might be afraid of all those long docker commands you need to type, just go check the Docker document and you will get familiar with them soon.
