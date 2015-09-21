@@ -2,6 +2,7 @@
 * [Hello Beego!](02.hello-beego.md)
 * [模板](03.模板.md)
 * [请求数据处理](04.请求数据处理.md)
+* [持续集成 Continuous Integration](05.CI-持续集成.md)
 * [Ajax 单页应用](06.ajax-单页应用.md)
 * [国际化与本地化](07.国际化与本地化.md)
 * [数据库](08.数据库.md)
